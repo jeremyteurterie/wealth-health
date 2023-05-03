@@ -1,0 +1,19 @@
+.error {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.error * {
+  margin: 0.3rem;
+}
+
+.error h2 {
+  color: #00bc77;
+  font-size: xx-large;
+}
+
+.error p {
+  font-style: italic;
+}

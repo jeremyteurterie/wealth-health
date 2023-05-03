@@ -1,0 +1,12 @@
+.main {
+  flex: 1;
+}
+
+.hero {
+  background-image: url('../assets/logo3.jpg');
+  background-position: 0 -50px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 650px;
+  position: relative;
+}
