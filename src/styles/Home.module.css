@@ -1,12 +1,113 @@
-.main {
-  flex: 1;
+h1 {
+  font-size: 2.5rem;
+  color: #27313c;
+  margin-bottom: 1rem;
+  text-align: center;
 }
 
-.hero {
-  background-image: url('../assets/logo3.jpg');
-  background-position: 0 -50px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 650px;
-  position: relative;
+.container {
+  margin: 20px auto;
+  max-width: 500px;
+  text-align: center;
+}
+
+label {
+  color: #27313c;
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input[type='text'],
+input[type='number'],
+select {
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 16px;
+  padding: 5px;
+  width: 100%;
+}
+
+input[type='date'] {
+  width: 100%;
+}
+
+fieldset.address {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+legend {
+  color: #27313c;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.modal {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  display: none;
+  font-size: 24px;
+  justify-content: center;
+  left: 0;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.modal.active {
+  display: flex;
+}
+
+form {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  font-family: Arial, sans-serif;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input[type='text'],
+select {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+legend {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.button {
+  background-color: #24d26d;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
 }

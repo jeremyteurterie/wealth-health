@@ -1,7 +1,42 @@
-.mainnav {
-  padding: 5px 20px;
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: #27313c;
+  box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.15);
+  padding: 20px 40px;
+  box-sizing: border-box;
 }
 
-.mainnavlogoimage {
-  width: 100px;
+header .headerlimiter h1 {
+  margin: 0;
+  font-size: 40px;
+  color: #fff;
+}
+
+header .headerlimiter a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+button {
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 0px;
+}
+
+button:hover {
+  background-color: transparent;
+  color: #6dc4b3;
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+}
+
+.button {
+  display: flex;
 }

@@ -5,7 +5,9 @@ import styles from '../styles/Footer.module.css';
 const Footer = () => {
   return (
     <footer className={styles.footer}>
-      <p className={styles.footertext}>Copyright 2023 Wealth Health</p>
+      <div className={styles.footerBottom}>
+        <p>&copy; 2023 Wealth Health. All rights reserved.</p>
+      </div>
     </footer>
   );
 };

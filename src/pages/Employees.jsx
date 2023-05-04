@@ -8,19 +8,14 @@ import Footer from '../components/Footer';
 const Employees = () => {
   return (
     <>
-      <header>
-        <Header />
-      </header>
+      <Header />
       <main>
         <div id="employee-div" class={styles.container}>
           <h1>Current Employees</h1>
           <table id="employee-table" class={styles.display}></table>
-          {/* <a href="index.html">Home</a> */}
         </div>
       </main>
-      <footer>
-        <Footer />
-      </footer>
+      <Footer />
     </>
   );
 };

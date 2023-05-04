@@ -1,22 +1,24 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// assets
-import logo from '../assets/logo.png';
 // styles
 import styles from '../styles/Header.module.css';
 
 const Header = () => {
   return (
     <header>
-      <nav className={styles.mainnav}>
-        <Link to="/" className={styles.mainnavlogo}>
-          <img
-            className={styles.mainnavlogoimage}
-            src={logo}
-            alt="Wealth Health logo"
-          />
+      <div className={styles.headerlimiter}>
+        <Link to="/">
+          <h1>HRnet</h1>
         </Link>
-      </nav>
+      </div>
+      <div className={styles.button}>
+        <Link to="/">
+          <button>Home</button>
+        </Link>
+        <Link to="/employees">
+          <button>Employees</button>
+        </Link>
+      </div>
     </header>
   );
 };

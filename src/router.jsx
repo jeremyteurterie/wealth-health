@@ -7,18 +7,13 @@ import {
 
 // pages
 import Home from './pages/Home';
-import CreateEmployees from './pages/CreateEmployees';
 import Employees from './pages/Employees';
+import Error from './pages/Error';
 
 const Routes = createBrowserRouter(
   createRoutesFromElements(
     <>
       <Route path="/" element={<Home />} errorElement={<Error />}></Route>
-      <Route
-        path="/create-employees"
-        element={<CreateEmployees />}
-        errorElement={<Error />}
-      ></Route>
       <Route
         path="/employees"
         element={<Employees />}
