@@ -1,6 +1,7 @@
 import React from 'react';
 // styles
 import styles from '../styles/CreateEmployees.module.css';
+// components
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
