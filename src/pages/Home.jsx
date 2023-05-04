@@ -9,7 +9,7 @@ import styles from '../styles/Home.module.css';
 
 const Home = () => {
   return (
-    <div>
+    <>
       <header>
         <Header />
       </header>
@@ -19,7 +19,7 @@ const Home = () => {
       <footer>
         <Footer />
       </footer>
-    </div>
+    </>
   );
 };
 
