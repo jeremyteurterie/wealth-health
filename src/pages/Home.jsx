@@ -4,6 +4,7 @@ import styles from '../styles/Home.module.css';
 // components
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import DateInput from '../components/DateInput';
 
 const Home = () => {
   return (
@@ -20,10 +21,10 @@ const Home = () => {
             <input type="text" id="last-name" />
 
             <label htmlFor="date-of-birth">Date of Birth</label>
-            <input id="date-of-birth" type="text" />
+            <DateInput name="date-of-birth" />
 
             <label htmlFor="start-date">Start Date</label>
-            <input id="start-date" type="text" />
+            <DateInput name="start-date" />
 
             <fieldset class="address">
               <legend>Address</legend>
