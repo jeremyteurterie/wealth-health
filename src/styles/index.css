@@ -15,3 +15,8 @@ body {
   height: 100%;
   font: 400 15px/1.4 'Open Sans', sans-serif;
 }
+
+#create-employee > div:nth-child(6) > div,
+#create-employee > div:nth-child(8) > div {
+  width: 85%;
+}
