@@ -10,11 +10,15 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.9.5",
+    "modal-component-wealth-health-jt7": "^1.0.0",
     "react": "^18.2.0",
     "react-data-table-component": "^7.5.3",
     "react-data-table-component-extensions": "^1.6.0",
     "react-dom": "^18.2.0",
+    "react-redux": "^8.0.5",
     "react-router-dom": "^6.11.0",
+    "redux-persist": "^6.0.0",
     "styled-components": "^5.3.6"
   },
   "devDependencies": {

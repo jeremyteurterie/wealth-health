@@ -1,3 +1,7 @@
+.mainHome {
+  min-height: 79.3vh;
+}
+
 h1 {
   font-size: 2.5rem;
   color: #27313c;
@@ -46,7 +50,7 @@ legend {
   margin-bottom: 5px;
 }
 
-.modal {
+/* .modal {
   background-color: rgba(0, 0, 0, 0.8);
   color: #fff;
   display: none;
@@ -62,7 +66,7 @@ legend {
 
 .modal.active {
   display: flex;
-}
+} */
 
 form {
   max-width: 500px;
