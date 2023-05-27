@@ -61,47 +61,19 @@ const Employees = () => {
 
   //search react table
   const [records, setRecords] = useState(employeeDatas);
-  function searchBarFilter(event) {
-    const { value } = event.target;
 
+  function filterEmployees(event) {
+    const { value } = event.target;
     const newData = employeeDatas.filter((row) => {
-      const firstNameMatch = row.firstName
-        .toLowerCase()
-        .includes(value.toLowerCase());
-      const lastNameMatch = row.lastName
-        .toLowerCase()
-        .includes(value.toLowerCase());
-      const startDateMatch = row.startDate
-        .toLowerCase()
-        .includes(value.toLowerCase());
-      const departmentMatch = row.department
-        .toLowerCase()
-        .includes(value.toLowerCase());
-      const birthMatch = row.birth.toLowerCase().includes(value.toLowerCase());
-      const streetMatch = row.street
-        .toLowerCase()
-        .includes(value.toLowerCase());
-      const cityMatch = row.city.toLowerCase().includes(value.toLowerCase());
-      const stateMatch = row.state.toLowerCase().includes(value.toLowerCase());
-      const zipCodeMatch = row.zipCode
-        .toLowerCase()
-        .includes(value.toLowerCase());
-      // Retourne true si au moins l'un des champs (firstName ou lastName) correspond
-      return (
-        firstNameMatch ||
-        lastNameMatch ||
-        startDateMatch ||
-        departmentMatch ||
-        birthMatch ||
-        streetMatch ||
-        cityMatch ||
-        stateMatch ||
-        zipCodeMatch
+      const rowValues = Object.values(row);
+
+      return rowValues.some((field) =>
+        String(field).toLowerCase().includes(value.toLowerCase())
       );
     });
-
     setRecords(newData);
   }
+
   return (
     <>
       <Header />
@@ -109,7 +81,7 @@ const Employees = () => {
         <div id="employee-div" className={styles.container}>
           <h1>Current Employees</h1>
           <table id="employee-table" className={styles.display}></table>
-          <input className="searchBar" onChange={searchBarFilter}></input>
+          <input className="searchBar" onChange={filterEmployees}></input>
         </div>
         <DataTable
           columns={columns}
