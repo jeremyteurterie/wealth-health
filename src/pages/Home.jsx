@@ -1,54 +1,40 @@
 import React, { useState } from 'react';
-// styles
-import styles from '../styles/Home.module.css';
-// data
-import dataStates from '../data/states';
-import { setUsersData } from '../slices/employees.slice';
 import { useDispatch, useSelector } from 'react-redux';
-// modal component
-import { Modal } from 'modal-component-wealth-health-jt7';
-// components
+import { setUsersData } from '../slices/employees.slice';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import { Modal } from 'modal-component-wealth-health-jt7';
+import dataStates from '../data/states';
+import styles from '../styles/Home.module.css';
 
-let userTab = [];
 const Home = () => {
-  const [firstName, setFirstName] = useState();
-  const [lastName, setLastName] = useState();
-  const [startDate, setStartDate] = useState();
-  const [department, setDepartment] = useState();
-  const [birth, setBirth] = useState();
-  const [street, setStreet] = useState();
-  const [city, setCity] = useState();
-  const [state, setState] = useState();
-  const [zipCode, setZipCode] = useState();
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    startDate: '',
+    department: '',
+    birth: '',
+    street: '',
+    city: '',
+    state: '',
+    zipCode: '',
+  });
 
-  const [modal, setModal] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
   const dispatch = useDispatch();
-  const users = useSelector((state) => state.user.users);
 
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
-    setModal(true);
-    let user = {
-      firstName: firstName,
-      lastName: lastName,
-      startDate: startDate,
-      department: department,
-      birth: birth,
-      street: street,
-      city: city,
-      state: state,
-      zipCode: zipCode,
-    };
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
+  };
 
-    // Sending data in an array
-    userTab = Object.assign([], userTab);
-    userTab.push(user);
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setModalOpen(true);
 
-    // dispatch(setUsersData(userTab));
-    // dispatch(setUsersData([...users, newUser]));
-    dispatch(setUsersData(user));
+    const newUser = { ...formData };
+
+    dispatch(setUsersData(newUser));
   };
 
   return (
@@ -57,113 +43,122 @@ const Home = () => {
       <main className={styles.mainHome}>
         <div className={styles.container}>
           <h1>Create Employee</h1>
-          <form action="#" id="create-employee">
-            <label htmlFor="first-name">
+          <form id="create-employee" onSubmit={handleSubmit}>
+            <label>
               First Name
               <input
                 type="text"
                 name="firstName"
+                value={formData.firstName}
+                onChange={handleInputChange}
                 required
-                onChange={(e) => setFirstName(e.target.value)}
               />
             </label>
 
-            <label htmlFor="last-name">
+            <label>
               Last Name
               <input
                 type="text"
                 name="lastName"
+                value={formData.lastName}
+                onChange={handleInputChange}
                 required
-                onChange={(e) => setLastName(e.target.value)}
               />
             </label>
 
-            <label htmlFor="date-of-birth">
+            <label>
               Date of Birth
               <input
                 type="date"
-                name="firstName"
+                name="birth"
+                value={formData.birth}
+                onChange={handleInputChange}
                 required
-                onChange={(e) => setBirth(e.target.value)}
               />
             </label>
 
-            <label htmlFor="start-date">
+            <label>
               Start Date
               <input
                 type="date"
-                name="firstName"
+                name="startDate"
+                value={formData.startDate}
+                onChange={handleInputChange}
                 required
-                onChange={(e) => setStartDate(e.target.value)}
               />
             </label>
 
             <fieldset className="address">
               <legend>Address</legend>
 
-              <label htmlFor="street">
+              <label>
                 Street
                 <input
                   type="text"
-                  name="firstName"
+                  name="street"
+                  value={formData.street}
+                  onChange={handleInputChange}
                   required
-                  onChange={(e) => setStreet(e.target.value)}
                 />
               </label>
 
-              <label htmlFor="city">
+              <label>
                 City
                 <input
                   type="text"
-                  name="firstName"
+                  name="city"
+                  value={formData.city}
+                  onChange={handleInputChange}
                   required
-                  onChange={(e) => setCity(e.target.value)}
                 />
               </label>
 
-              <label htmlFor="state">
+              <label>
                 State
-                <select name="State" onChange={(e) => setState(e.target.value)}>
-                  {dataStates.map((item, id) => (
-                    <option key={id}>{item.name}</option>
+                <select
+                  name="state"
+                  value={formData.state}
+                  onChange={handleInputChange}
+                >
+                  {dataStates.map((state, index) => (
+                    <option key={index}>{state.name}</option>
                   ))}
                 </select>
               </label>
 
-              <label htmlFor="zip-code">
+              <label>
                 Zip Code
                 <input
                   type="number"
-                  name="firstName"
+                  name="zipCode"
+                  value={formData.zipCode}
+                  onChange={handleInputChange}
                   required
-                  onChange={(e) => setZipCode(e.target.value)}
                 />
               </label>
             </fieldset>
 
-            <label htmlFor="department">Department</label>
-            <select
-              name="department"
-              required
-              onChange={(e) => setDepartment(e.target.value)}
-              pattern="Marketing | Engineering"
-            >
-              <option>Sales</option>
-              <option>Marketing</option>
-              <option>Engineering</option>
-              <option>Human Resources</option>
-              <option>Legal</option>
-            </select>
-            <input
-              type="submit"
-              value="Save"
-              className={styles.button}
-              onClick={(e) => handleFormSubmit(e)}
-            />
+            <label>
+              Department
+              <select
+                name="department"
+                value={formData.department}
+                onChange={handleInputChange}
+                required
+              >
+                <option value="Sales">Sales</option>
+                <option value="Marketing">Marketing</option>
+                <option value="Engineering">Engineering</option>
+                <option value="Human Resources">Human Resources</option>
+                <option value="Legal">Legal</option>
+              </select>
+            </label>
+
+            <input type="submit" value="Save" className={styles.button} />
           </form>
         </div>
       </main>
-      {modal && <Modal trigger={modal} setTrigger={setModal} />}
+      {modalOpen && <Modal trigger={modalOpen} setTrigger={setModalOpen} />}
       <Footer />
     </>
   );
