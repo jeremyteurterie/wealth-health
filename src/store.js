@@ -31,6 +31,10 @@ const persistedReducer = persistReducer(persistConfig, userReducer);
  * @type {import('@reduxjs/toolkit').EnhancedStore}
  */
 const store = configureStore({
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: false,
+    }),
   reducer: {
     user: persistedReducer,
   },
