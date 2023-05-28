@@ -3,6 +3,10 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin: 32.5px auto;
+  max-width: 500px;
+  text-align: center;
+  color: #27313c;
 }
 
 h1 {
@@ -13,4 +17,11 @@ h1 {
 
 .mainEmployees {
   min-height: 82.9vh;
+}
+
+.filter {
+  display: flex;
+  color: #27313c;
+  justify-content: right;
+  margin-top: 20px;
 }

@@ -80,8 +80,12 @@ const Employees = () => {
       <main className={styles.mainEmployees}>
         <div id="employee-div" className={styles.container}>
           <h1>Current Employees</h1>
-          <table id="employee-table" className={styles.display}></table>
-          <input className="searchBar" onChange={filterEmployees}></input>
+          <input
+            placeholder="Filter"
+            className={styles.filter}
+            onChange={filterEmployees}
+          ></input>
+          <table id="employee-table" className={styles.table}></table>
         </div>
         <DataTable
           columns={columns}
