@@ -1,12 +1,23 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { Modal } from 'modal-component-wealth-health-jeremyteurterie';
+// redux
 import { setUsersData } from '../slices/employees.slice';
+// components
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import { Modal } from 'modal-component-wealth-health-jeremyteurterie';
+// data
 import dataStates from '../data/states';
+// styles
 import styles from '../styles/Home.module.css';
 
+/**
+ * Home component.
+ * Renders the home page for creating an employee.
+ *
+ * @component
+ * @returns {JSX.Element} The rendered JSX element for the home page.
+ */
 const Home = () => {
   const [formData, setFormData] = useState({
     firstName: '',
@@ -23,11 +34,21 @@ const Home = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const dispatch = useDispatch();
 
+  /**
+   * Handles input change in the form fields.
+   *
+   * @param {Event} event - The change event triggered by the input field.
+   */
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
   };
 
+  /**
+   * Handles form submission.
+   *
+   * @param {Event} event - The form submission event.
+   */
   const handleSubmit = (event) => {
     event.preventDefault();
     setModalOpen(true);

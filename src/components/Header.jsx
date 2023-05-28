@@ -3,6 +3,13 @@ import { Link } from 'react-router-dom';
 // styles
 import styles from '../styles/Header.module.css';
 
+/**
+ * Header component.
+ * Renders the header section of the website.
+ *
+ * @component
+ * @returns {JSX.Element} The rendered JSX element for the header.
+ */
 const Header = () => {
   return (
     <header>

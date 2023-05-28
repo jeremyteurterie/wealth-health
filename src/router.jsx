@@ -4,7 +4,6 @@ import {
   Route,
   RouterProvider,
 } from 'react-router-dom';
-
 // pages
 import Home from './pages/Home';
 import Employees from './pages/Employees';

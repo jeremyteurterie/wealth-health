@@ -7,10 +7,18 @@ import styles from '../styles/Employees.module.css';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
+/**
+ * Employees component.
+ * Renders the employees section of the website.
+ *
+ * @component
+ * @returns {JSX.Element} The rendered JSX element for the employees section.
+ */
 const Employees = () => {
+  // Redux state
   let employeeDatas = useSelector((state) => state.user.users);
 
-  // React table
+  // React table columns
   const columns = [
     {
       name: 'FirstName',
@@ -59,9 +67,15 @@ const Employees = () => {
     },
   ];
 
-  //search react table
+  // State for filtered records
   const [records, setRecords] = useState(employeeDatas);
 
+  /**
+   * Filters the employees based on the provided search value.
+   * Updates the filtered records in the component state.
+   *
+   * @param {Event} event - The change event triggered by the filter input.
+   */
   function filterEmployees(event) {
     const { value } = event.target;
     const newData = employeeDatas.filter((row) => {
