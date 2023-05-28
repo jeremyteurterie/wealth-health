@@ -21,47 +21,47 @@ const Employees = () => {
   // React table columns
   const columns = [
     {
-      name: 'FirstName',
+      name: 'First Name',
       selector: (row) => row.firstName,
       sortable: true,
     },
     {
-      name: 'lastName',
+      name: 'Last Name',
       selector: (row) => row.lastName,
       sortable: true,
     },
     {
-      name: 'startDate',
+      name: 'Start Date',
       selector: (row) => row.startDate,
       sortable: true,
     },
     {
-      name: 'department',
+      name: 'Department',
       selector: (row) => row.department,
       sortable: true,
     },
     {
-      name: 'birth',
+      name: 'Date of Birth',
       selector: (row) => row.birth,
       sortable: true,
     },
     {
-      name: 'street',
+      name: 'Street',
       selector: (row) => row.street,
       sortable: true,
     },
     {
-      name: 'city',
+      name: 'City',
       selector: (row) => row.city,
       sortable: true,
     },
     {
-      name: 'state',
+      name: 'State',
       selector: (row) => row.state,
       sortable: true,
     },
     {
-      name: 'zipCode',
+      name: 'Zip Code',
       selector: (row) => row.zipCode,
       sortable: true,
     },
