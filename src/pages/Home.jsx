@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { setUsersData } from '../slices/employees.slice';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import { Modal } from 'modal-component-wealth-health-jt7';
+import { Modal } from 'modal-component-wealth-health-jeremyteurterie';
 import dataStates from '../data/states';
 import styles from '../styles/Home.module.css';
 
