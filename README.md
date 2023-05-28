@@ -2,7 +2,7 @@
 Convert a jQuery library to React.
 ##
 <p align="center">
-  <img src="./logo2.png" />
+  <img src="logo.jpg" />
 </p>
 
 ##
