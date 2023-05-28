@@ -2,10 +2,13 @@
   min-height: 79.3vh;
 }
 
+.titleHome {
+  margin-bottom: 20px;
+}
+
 h1 {
   font-size: 2.5rem;
   color: #27313c;
-  margin-bottom: 1rem;
   text-align: center;
 }
 
@@ -20,7 +23,6 @@ label {
   display: block;
   font-size: 16px;
   font-weight: bold;
-  margin-bottom: 5px;
 }
 
 input[type='text'],
@@ -29,12 +31,12 @@ select {
   border: 1px solid #ccc;
   border-radius: 3px;
   font-size: 16px;
-  padding: 5px;
   width: 100%;
 }
 
 input[type='date'] {
   width: 100%;
+  font-family: 'Open Sans';
 }
 
 fieldset.address {
@@ -50,24 +52,6 @@ legend {
   margin-bottom: 5px;
 }
 
-/* .modal {
-  background-color: rgba(0, 0, 0, 0.8);
-  color: #fff;
-  display: none;
-  font-size: 24px;
-  justify-content: center;
-  left: 0;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1;
-}
-
-.modal.active {
-  display: flex;
-} */
-
 form {
   max-width: 500px;
   margin: 0 auto;
@@ -75,12 +59,10 @@ form {
   border: 1px solid #ccc;
   border-radius: 5px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-  font-family: Arial, sans-serif;
 }
 
 label {
   display: block;
-  margin-bottom: 5px;
   font-weight: bold;
 }
 
@@ -108,13 +90,13 @@ legend {
 
 .formbutton {
   background-color: #24d26d;
-  padding: 10px 20px;
+  padding: 6px 12px;
   border: none;
   border-radius: 5px;
   font-weight: bold;
   text-transform: uppercase;
   font-size: 13px;
   cursor: pointer;
-  margin-top: 20px;
+  margin-top: 15px;
   color: #27313c;
 }

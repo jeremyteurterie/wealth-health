@@ -13,10 +13,10 @@ const Header = () => {
       </div>
       <div className={styles.button}>
         <Link to="/">
-          <button>Home</button>
+          <button className={styles.headerButton}>Home</button>
         </Link>
         <Link to="/employees">
-          <button>Employees</button>
+          <button className={styles.headerButton}>Employees</button>
         </Link>
       </div>
     </header>

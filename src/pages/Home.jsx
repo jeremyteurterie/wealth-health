@@ -42,7 +42,7 @@ const Home = () => {
       <Header />
       <main className={styles.mainHome}>
         <div className={styles.container}>
-          <h1>Create Employee</h1>
+          <h1 className={styles.titleHome}>Create Employee</h1>
           <form id="create-employee" onSubmit={handleSubmit}>
             <label>
               First Name
@@ -154,7 +154,7 @@ const Home = () => {
               </select>
             </label>
 
-            <input type="submit" value="Save" className={styles.button} />
+            <input type="submit" value="Save" className={styles.formbutton} />
           </form>
         </div>
       </main>
