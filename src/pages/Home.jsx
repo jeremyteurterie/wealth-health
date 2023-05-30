@@ -56,6 +56,18 @@ const Home = () => {
     const newUser = { ...formData };
 
     dispatch(setUsersData(newUser));
+
+    setFormData({
+      firstName: '',
+      lastName: '',
+      startDate: '',
+      department: '',
+      birth: '',
+      street: '',
+      city: '',
+      state: '',
+      zipCode: '',
+    });
   };
 
   return (
@@ -167,6 +179,7 @@ const Home = () => {
                 onChange={handleInputChange}
                 required
               >
+                <option value="">Select a department</option>
                 <option value="Sales">Sales</option>
                 <option value="Marketing">Marketing</option>
                 <option value="Engineering">Engineering</option>
